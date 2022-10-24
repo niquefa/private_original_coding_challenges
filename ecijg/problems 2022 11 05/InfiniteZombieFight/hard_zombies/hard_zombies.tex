@@ -1,0 +1,105 @@
+%Infinite zombie fight
+
+There is a game in which you have a group of fighters and must fight against zombies that attack your fighters in a very narrow corridor, this attack can only come from one of the two sides. For simplicity we will assume all the fighters of your team are in a straight line, no two fighters occupy the same position. You start the game with \textit{n} fighters. Your work is to show your team status after \textit{m} fights.
+
+Each fight is in one of the two sides of the narrow corredor, either \textit{Left} or \textit{Right}. And the outcome of a fight is either you lose that fighter to the zombies, or you magically won a reinforcement that is placed in the same end where the fight took place. If by any chance you should do a fight and there is no more fighters, you should go on with the next fight (Check example scenario).
+
+
+\subsection* {Input}
+
+The first line of the input in the number of tests cases scenarios that follow. No more than 600 cases.
+
+Each test case consist of:
+
+\begin{enumerate}
+	\item A number \textit{n} in the first line indicating the number of fighters in the team. $0 < n < 100001$
+	\item In the next line it will be \textit{n} numbers, each number is a member identification number, each will be a non negative integer less than $2^{66}$, it could be the case that two fighters with the same identification number. The first fighter to be taken from input should be considered to be in the left most part of the corridor, the last fighter to be taken from input, should be considered to be in the right most part of the corridor.
+	\item A number \textit{m} in a line that indicates the numbers of fights to happen in the scenario. $0 < m < 100001$
+	\item Each of the next \textit{m} lines, consist of one of two letters \textit{L} or \textit{R} indicating the place where the fight happens, \textit{L} for left, \textit{R} for right, after that letter, it will be a space character, and then either a \textit{D} or a non negative integer. If there is a \textit{D}, it means  that the fighter loose the fight and must disapear from the game, if it is not a \textit{D}, it will be a non negative integer, and that mean that the fighter won the fight and you will receive reinforcement in that side of the corridor, the number in the input is the identification number of the reinforcement. 
+\end{enumerate}
+
+\inputnotice
+
+A fighter that has been eliminated from the game could be later appear as a reinforcement.
+
+\subsection* {Output}
+
+For each scenario print the status in which the game is after all the \textit{m} fights. Follow the format in the output below.
+
+\outputnotice
+
+\vspace{12pt}
+
+{\small
+\begin{minipage}[c]{1\textwidth}%
+	\begin{center}
+		\begin{tabular}{|l|l|} \hline 
+		\begin{minipage}[t]{0.3\textwidth}%
+		\bf{Sample Input} \\
+		\begin{verbatim}
+4
+10
+4 5 6 1 2 3 7 8 9 10
+7
+R D
+R D
+R D
+L D
+L D
+L D
+L D
+2
+666 999
+4
+L D
+L D
+L D
+R D
+5
+1 2 3 4 5
+14
+L D
+L 6
+R D
+R 7
+L D
+R D
+L 8
+R 9
+L 10
+R 11
+R 12
+R 13
+L 14
+L 15
+2
+1 2
+5
+L D
+L D
+L D
+R D
+R 666
+\end{verbatim}
+    \end{minipage}%
+&
+    \begin{minipage}[t]{0.3\textwidth}%
+      \textbf{Sample Output} \\      
+\begin{verbatim}
+Scenario 1
+3 survivors
+2 3 7
+Scenario 2
+0 survivors
+
+Scenario 3
+11 survivors
+15 14 10 8 2 3 4 9 11 12 13
+Scenario 4
+1 survivors
+666
+\end{verbatim}
+\end{minipage}\\
+    \hline
+\end{tabular}\end{center}\end{minipage}%
+}

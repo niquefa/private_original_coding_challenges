@@ -1,0 +1,78 @@
+%642 Word Amalgamation
+In millions of newspapers across the United States there is a word game called \textit{Jumble}. The object of this game is to solve a riddle, but in order to find the letters that appear in the answer it is necessary to unscramble four words. Your task is to write a program that can unscramble words.
+
+
+
+\subsection* {Input}
+
+The input file contains four parts:
+
+\begin{enumerate}
+	\item a dictionary, which consists of at least one and at most 100 words, one per line;
+	\item a line containing \texttt{‘XXXXXX’}, which signals the end of the dictionary;
+	\item one or more scrambled ‘words’ that you must unscramble, each on a line by itself; and
+	\item another line containing \texttt{‘XXXXXX’}, which signals the end of the file.
+
+\end{enumerate}
+All words, including both dictionary words and scrambled words, consist only of lowercase English letters and will be at least one and at most six characters long. (Note that the sentinel \texttt{‘XXXXXX’} contains uppercase \texttt{X}’s.) The dictionary is not necessarily in sorted order, but each word in the dictionary is unique.
+
+\inputnotice
+
+\subsection* {Output}
+
+For each scrambled word in the input, output an alphabetical list of all dictionary words that can be formed by rearranging the letters in the scrambled word. Each word in this list must appear on a line by itself. If the list is empty (because no dictionary words can be formed), output the line \texttt{‘NOT A VALID WORD’} instead. In either case, output a line containing six asterisks to signal the end of the list.
+
+\outputnotice
+
+\vspace{12pt}
+
+{\small
+\begin{minipage}[c]{1\textwidth}%
+	\begin{center}
+		\begin{tabular}{|l|l|} \hline 
+		\begin{minipage}[t]{0.3\textwidth}%
+		\bf{Sample Input} \\
+		\begin{verbatim}
+tarp
+given
+score
+refund
+only
+trap
+work
+earn
+course
+pepper
+part
+XXXXXX
+resco
+nfudre
+aptr
+sett
+oresuc
+XXXXXX
+
+\end{verbatim}
+    \end{minipage}%
+&
+    \begin{minipage}[t]{0.3\textwidth}%
+      \textbf{Sample Output} \\      
+\begin{verbatim}
+score
+******
+refund
+******
+part
+tarp
+trap
+******
+NOT A VALID WORD
+******
+course
+******
+
+\end{verbatim}
+\end{minipage}\\
+    \hline
+\end{tabular}\end{center}\end{minipage}%
+}

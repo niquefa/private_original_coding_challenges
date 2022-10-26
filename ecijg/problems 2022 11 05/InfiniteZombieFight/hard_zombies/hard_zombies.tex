@@ -2,7 +2,7 @@
 
 There is a game in which you have a group of fighters and must fight against zombies that attack your fighters in a very narrow corridor, this attack can only come from one of the two sides. For simplicity we will assume all the fighters of your team are in a straight line, no two fighters occupy the same position. You start the game with \textit{n} fighters. Your work is to show your team status after \textit{m} fights.
 
-Each fight is in one of the two sides of the narrow corredor, either \textit{Left} or \textit{Right}. And the outcome of a fight is either you lose that fighter to the zombies, or you magically won a reinforcement that is placed in the same end where the fight took place. If by any chance you should do a fight and there is no more fighters, you should go on with the next fight (Check example scenario).
+Each fight is in one of the two sides of the narrow corridor, either \textit{Left} or \textit{Right}. And the outcome of a fight is either you lose that fighter to the zombies, or you magically won a reinforcement that is placed in the same end where the fight took place. If by any chance you should do a fight and there is no more fighters, you should go on with the next fight (Check example scenario).
 
 
 \subsection* {Input}
@@ -13,18 +13,18 @@ Each test case consist of:
 
 \begin{enumerate}
 	\item A number \textit{n} in the first line indicating the number of fighters in the team. $0 < n < 100001$
-	\item In the next line it will be \textit{n} numbers, each number is a member identification number, each will be a non negative integer less than $2^{66}$, it could be the case that two fighters with the same identification number. The first fighter to be taken from input should be considered to be in the left most part of the corridor, the last fighter to be taken from input, should be considered to be in the right most part of the corridor.
+	\item In the next line it will be \textit{n} numbers, each number is a member identification number, each will be a non negative integer less than $2^{66}$, it could be the case that two fighters have the same identification number. The first fighter to be taken from the input data should be considered to be in the left most part of the corridor, the last fighter to be taken from the input data, should be considered to be in the right most part of the corridor.
 	\item A number \textit{m} in a line that indicates the numbers of fights to happen in the scenario. $0 < m < 100001$
-	\item Each of the next \textit{m} lines, consist of one of two letters \textit{L} or \textit{R} indicating the place where the fight happens, \textit{L} for left, \textit{R} for right, after that letter, it will be a space character, and then either a \textit{D} or a non negative integer. If there is a \textit{D}, it means  that the fighter loose the fight and must disapear from the game, if it is not a \textit{D}, it will be a non negative integer, and that mean that the fighter won the fight and you will receive reinforcement in that side of the corridor, the number in the input is the identification number of the reinforcement. 
+	\item Each of the next \textit{m} lines, consist of one of two letters \textit{L} or \textit{R} indicating the place where the fight happens, \textit{L} for left, \textit{R} for right, after that letter, it will be a space character, and then either a \textit{D} or a non negative integer. If there is a \textit{D}, it means  that the fighter loose the fight and must vanish from the game, if it is not a \textit{D}, it will be a non negative integer, and that mean that the fighter won the fight and you will receive reinforcement in that side of the corridor, the number in the input is the identification number of the reinforcement. That reinforcement will be the next fighter to fight in that end of the corridor, the fighter who won the fight will be after the reinforcement. 
 \end{enumerate}
 
 \inputnotice
 
-A fighter that has been eliminated from the game could be later appear as a reinforcement.
+A fighter that has been eliminated from the game could later appear as a reinforcement.
 
 \subsection* {Output}
 
-For each scenario print the status in which the game is after all the \textit{m} fights. Follow the format in the output below.
+For each scenario print the status in which the game is after all the \textit{m} fights. Follow the format in the output below. Make sure of always print a line with the fighters left, even if there is no fighers left (i.e. an empty line).
 
 \outputnotice
 
